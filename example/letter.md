@@ -2,16 +2,18 @@
 author:
 - Aaron Wolen
 - Your Organization
+subject: Excepteur sint occaecat cupidatat non proident
 opening: To whom it may concern,
-closing: Sincerely,
+closing: Yours faithfully,
 date: 12 December 2020
 address: 
-- 123 Street Rd
-- Chicago, IL
+- Carlton Community Centre
+- 3376 Hyde Street
+- CARLTON NSW 2218
 return-address: 
-- My Home
-- 456 Road St.
-- New York, NY
+- Aaron Wolen
+- 1115 Railway Road
+- CARLTON NSW 2218
 cc:
 - Recipient 1
 - Recipient 2
@@ -22,7 +24,8 @@ ps: |
   PS Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
 fontfamily: mathpazo
 fontsize: 12pt
-geometry: margin=1in
+papersize: A4
+geometry: margin=2.5cm
 blockquote: true
 letterhead: example/letterhead.pdf
 signature: example/signature.pdf

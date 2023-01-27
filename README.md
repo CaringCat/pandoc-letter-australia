@@ -1,11 +1,8 @@
-# A simple letter template for Pandoc
+# A simple Australian letter template for Pandoc
 
-[![Build Status](https://travis-ci.org/aaronwolen/pandoc-letter.svg?branch=master)](https://travis-ci.org/aaronwolen/pandoc-letter)
-[![Package-License](http://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+This template allows you to write Australian business letters in Markdown and convert them to nice looking PDFs using [Pandoc][] and [LaTeX][]. Original template was created by [Aaron Wolen][aaron] and [Andrew Dunning][andrew], this version is modified based on [Australia Post letter template][auspost] and the [Australian Government Style Manual][stylemanual].
 
-**Authors**: [Aaron Wolen][aaron] and [Andrew Dunning][andrew]
-
-This template allows you to write letters in Markdown and convert them to nice looking PDFs using [Pandoc][] and [LaTeX][]. It accepts arguments used in the LaTeX letter class, including:
+It accepts arguments used in the LaTeX letter class, including:
 
 * opening
 * closing
@@ -19,16 +16,17 @@ All of which can be specified in a YAML metadata block. Additional [Pandoc/LaTex
 
 ```yaml
 ---
-author: Aaron
+author: Aaron Wolen
 opening: To whom it may concern,
-closing: Sincerely,
+closing: Yours faithfully,
 address:
-- 123 Street Rd
-- Chicago, IL
+- Carlton Community Centre
+- 3376 Hyde Street
+- CARLTON NSW 2218
 return-address:
-- My Home
-- 456 Road St.
-- New York, NY
+- Aaron Wolen
+- 1115 Railway Road
+- CARLTON NSW 2218
 
 # ADDITIONAL ARGUMENTS
 links-as-notes: true
@@ -41,7 +39,7 @@ Note that each address component should start with a hyphen. The provided exampl
 pandoc --template=template-letter.tex example/letter.md -o example/letter.pdf
 ```
 
-You can see the PDF output [here](https://github.com/aaronwolen/pandoc-letter/blob/master/example/letter.pdf).
+You can see the PDF output [here](https://github.com/CaringCat/pandoc-letter-australia/blob/master/example/letter.pdf).
 
 ## Features
 
@@ -145,3 +143,5 @@ GPL-3 for pandoc-letter and the underlying [Pandoc template][latex-template].
 [pandoc-latex-variables]: http://pandoc.org/MANUAL.html#variables-for-latex
 [aaron]: http://aaronwolen.com
 [andrew]: http://andrewdunning.ca
+[auspost]: https://auspost.com.au/content/dam/auspost_corp/media/documents/business-letter-template.pdf
+[stylemanual]: https://www.stylemanual.gov.au/content-types/emails-and-letters

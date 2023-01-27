@@ -191,6 +191,20 @@ $endif$
 % set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
+\renewcommand*{\opening}[1]{\ifx\@empty\fromaddress
+  \thispagestyle{firstpage}%
+    {\raggedleft\@date\par}%
+  \else  % home address
+    \thispagestyle{empty}%
+    {\raggedleft\begin{tabular}{l@{}}\ignorespaces
+      \fromaddress \\*[2\parskip]%
+      \end{tabular}\par
+     \raggedright\@date\par}%
+  \fi
+  \vspace{2\parskip}%
+  {\raggedright \toname \\ \toaddress \par}%
+  \vspace{2\parskip}%
+  #1\par\nobreak}
 \makeatother
 
 $if(signature)$
@@ -275,8 +289,13 @@ $endif$
 $endif$
 
 
-\begin{letter}{$for(address)$$address$$sep$\\$endfor$$if(subject)$\\ ~ \\$subject$$endif$}
+\begin{letter}
+{$for(address)$$address$$sep$\\$endfor$}
 \opening{$opening$}
+
+$if(subject)$
+\textbf{\\Subject: $subject$\\}
+$endif$
 
 $body$
 
